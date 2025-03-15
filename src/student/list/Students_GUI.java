@@ -43,7 +43,7 @@ public class Students_GUI extends JFrame {
 		JComboBox gender = new JComboBox<>(genderSelect);
 
 		JButton submitButton = new JButton("Add Student");
-		JButton showListButton = new JButton();
+		JButton showListButton = new JButton("Show List");
 
 		MatteBorder underlineBorder = new MatteBorder(2, 2, 2, 2, Color.decode("#0A2342"));
 		EmptyBorder paddingBorder = new EmptyBorder(0, 10, 0, 0);
@@ -127,6 +127,19 @@ public class Students_GUI extends JFrame {
 			Project_Functions.addStudent(studID, studName, genderString, birthDate, email);
 		});
 
+		showListButton.setBounds(60, 425, 120, 35);
+		showListButton.setBackground(new Color(0, 0, 0, 0));
+		showListButton.setOpaque(false);
+		showListButton.setFocusable(false);
+		showListButton.setFont(new Font("Porza Libre", Font.BOLD, 14));
+		showListButton.setForeground(Color.decode("#0A2342"));
+		showListButton.setBorder(underlineBorder);
+		showListButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		showListButton.addActionListener(e -> {
+			this.hide();
+			new List_GUI();
+		});
+
 		add(titleJLabel);
 		add(studIDJLabel);
 		add(studJTextField);
@@ -139,6 +152,7 @@ public class Students_GUI extends JFrame {
 		add(emaiJLabel);
 		add(emailJTextField);
 		add(submitButton);
+		add(showListButton);
 
 		setVisible(true);
 	}

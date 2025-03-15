@@ -46,19 +46,19 @@ public class Project_Functions {
 		}
 
 		public String getEmailString() {
-			return birthDateString;
-		}
-
-		public void setEmailString(String birthDateString) {
-			this.birthDateString = birthDateString;
-		}
-
-		public String getBirthDateString() {
 			return emailString;
 		}
 
-		public void setBirthDateString(String emailString) {
+		public void setEmailString(String emailString) {
 			this.emailString = emailString;
+		}
+
+		public String getBirthDateString() {
+			return birthDateString;
+		}
+
+		public void setBirthDateString(String birthDateString) {
+			this.birthDateString = birthDateString;
 		}
 
 		@Override
@@ -77,4 +77,9 @@ public class Project_Functions {
 		studentsList.add(newStudent);
 		System.out.println("Student added: " + newStudent);
 	}
+
+	public static List<Student> getStudents() {
+		return studentsList;
+	}
+
 }
