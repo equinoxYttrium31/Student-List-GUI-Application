@@ -76,34 +76,34 @@ public class Students_GUI extends JFrame {
 
 		// Input Configurations
 		studJTextField.setBounds(40, 85, 450, 30);
-		studJTextField.setFont(new Font("Porza Libre", Font.BOLD, 16));
+		studJTextField.setFont(new Font("Porza Libre", Font.PLAIN, 16));
 		studJTextField.setForeground(Color.decode("#0A2342"));
 		studJTextField.setBackground(new Color(0, 0, 0, 0));
 		studJTextField.setOpaque(false);
 		studJTextField.setBorder(new CompoundBorder(underlineBorder, paddingBorder));
 
 		nameJTextField.setBounds(40, 155, 450, 30);
-		nameJTextField.setFont(new Font("Porza Libre", Font.BOLD, 16));
+		nameJTextField.setFont(new Font("Porza Libre", Font.PLAIN, 16));
 		nameJTextField.setForeground(Color.decode("#0A2342"));
 		nameJTextField.setBackground(new Color(0, 0, 0, 0));
 		nameJTextField.setOpaque(false);
 		nameJTextField.setBorder(new CompoundBorder(underlineBorder, paddingBorder));
 
 		birthDJTextField.setBounds(40, 225, 450, 30);
-		birthDJTextField.setFont(new Font("Porza Libre", Font.BOLD, 16));
+		birthDJTextField.setFont(new Font("Porza Libre", Font.PLAIN, 16));
 		birthDJTextField.setForeground(Color.decode("#0A2342"));
 		birthDJTextField.setBackground(new Color(0, 0, 0, 0));
 		birthDJTextField.setOpaque(false);
 		birthDJTextField.setBorder(new CompoundBorder(underlineBorder, paddingBorder));
 
 		gender.setBounds(40, 295, 450, 30);
-		gender.setFont(new Font("Porza Libre", Font.BOLD, 16));
+		gender.setFont(new Font("Porza Libre", Font.PLAIN, 16));
 		gender.setForeground(Color.decode("#0A2342"));
 		gender.setBackground(Color.decode("#c7ced6"));
 		gender.setBorder(underlineBorder);
 
 		emailJTextField.setBounds(40, 365, 450, 30);
-		emailJTextField.setFont(new Font("Porza Libre", Font.BOLD, 16));
+		emailJTextField.setFont(new Font("Porza Libre", Font.PLAIN, 16));
 		emailJTextField.setForeground(Color.decode("#0A2342"));
 		emailJTextField.setBackground(new Color(0, 0, 0, 0));
 		emailJTextField.setOpaque(false);
@@ -125,6 +125,12 @@ public class Students_GUI extends JFrame {
 			genderString = (String) gender.getSelectedItem();
 
 			Project_Functions.addStudent(studID, studName, genderString, birthDate, email);
+
+			studJTextField.setText("");
+			nameJTextField.setText("");
+			emailJTextField.setText("");
+			birthDJTextField.setText("");
+			gender.setSelectedItem("Male");
 		});
 
 		showListButton.setBounds(60, 425, 120, 35);
