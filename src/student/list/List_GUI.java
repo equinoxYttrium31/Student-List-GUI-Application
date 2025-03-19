@@ -62,7 +62,7 @@ public class List_GUI extends JFrame {
 		search.setBorder(new CompoundBorder(underlineBorder, paddingBorder));
 
 		JButton searchButton = new JButton("Search");
-		searchButton.setBounds(580, 410, 150, 30);
+		searchButton.setBounds(590, 410, 100, 30);
 		searchButton.setBackground(new Color(0, 0, 0, 0));
 		searchButton.setOpaque(false);
 		searchButton.setFocusable(false);
@@ -77,6 +77,20 @@ public class List_GUI extends JFrame {
 			}
 		});
 
+		JButton backButton = new JButton("Back");
+		backButton.setBounds(710, 410, 100, 30);
+		backButton.setBackground(new Color(0, 0, 0, 0));
+		backButton.setOpaque(false);
+		backButton.setFocusable(false);
+		backButton.setFont(new Font("Porza Libre", Font.BOLD, 14));
+		backButton.setForeground(Color.decode("#0A2342"));
+		backButton.setBorder(underlineBorder);
+		backButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		backButton.addActionListener(e -> {
+			this.hide();
+			new Students_GUI();
+		});
+
 		loadStudentData();
 
 		add(header);
@@ -84,6 +98,7 @@ public class List_GUI extends JFrame {
 		add(searchJLabel);
 		add(search);
 		add(searchButton);
+		add(backButton);
 		setVisible(true);
 	}
 
